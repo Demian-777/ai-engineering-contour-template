@@ -1,0 +1,23 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Generic local caches and build output
+.cache/
+.local/
+dist/
+build/
+out/
+coverage/

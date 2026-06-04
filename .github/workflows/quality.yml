@@ -1,0 +1,18 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  placeholder:
+    name: Configure real checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail until project checks are configured
+        run: |
+          echo "No real quality checks are configured yet."
+          echo "Replace this placeholder with project-specific checks before relying on CI."
+          exit 1
