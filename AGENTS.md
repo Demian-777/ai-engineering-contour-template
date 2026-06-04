@@ -43,9 +43,13 @@ Do not treat placeholder commands as validation.
 
 ## Engineering rules
 
-- Keep changes small, explicit, and reversible.
+- Do not overengineer.
+- Keep changes small, explicit, reversible, and within the approved scope.
 - Prefer clear existing patterns over new abstractions.
 - Avoid accidental complexity, hidden coupling, ad-hoc workarounds, speculative abstractions, duplicated sources of truth, and spaghetti architecture.
+- No hidden patches: do not silently change dependencies, config, schema, API, environment variables, auth, routing, or architecture; any such change requires explicit approval in the brief or PR.
+- If scope expands or the fix becomes broad, stop and reassess before coding.
+- Do not create abstractions for a single use case unless they remove existing duplication or are explicitly approved.
 - Do not introduce an application stack in this template.
 - Document meaningful tradeoffs in the brief or PR.
 
@@ -91,7 +95,7 @@ Do not treat placeholder commands as validation.
 - A brief exists for the change.
 - Reuse and dependency decisions are documented.
 - The implementation matches the approved scope.
-- Configured checks were run and results are recorded.
+- Configured checks were run and results are recorded; checks not run are explicitly stated.
 - Risks, rollback, and security/privacy impact were considered.
 - The PR is ready for human review.
 
@@ -100,6 +104,8 @@ Do not treat placeholder commands as validation.
 - Do not edit files outside the approved scope.
 - Do not add application code to this template.
 - Do not add package managers, frameworks, Docker, databases, auth, deployment, MCP, subagents, evals, mutation testing, OpenHands, or skills catalogs.
-- Do not invent successful checks when real checks are not configured.
+- Do not fake validation; if checks were not run, say so.
+- Do not weaken, delete, or rewrite tests just to make code pass.
+- Do not continue coding when the approved scope no longer fits; stop and reassess.
 - Do not duplicate `AGENTS.md` as competing instructions.
 - Do not make broad rewrites without an approved brief and plan.
